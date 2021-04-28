@@ -1,5 +1,6 @@
 import java.io.*;
 
+import Views.FurnitureView;
 import Views.Login;
 
 import java.util.logging.*;
@@ -44,6 +45,7 @@ public class Main
         //#endregion
 
         Login newlogin = new Login();
+        FurnitureView newFurnitureView = new FurnitureView();
         newlogin.LoginMenu(logger);
         
         // Reader Method Class
@@ -52,9 +54,9 @@ public class Main
         do
         {
             System.out.println("What would you like to do? Enter the Number below:"
-            + "\n1. Furniture Items"
-            + "\n2. SKU's"
-            + "\n3. Report"
+            + "\n1. Create new Furniture"
+            + "\n2. View Furniture Report"
+            + "\n3. "
             + "\n4. Exit\n");
 
             String UserInput = reader.readLine();
@@ -62,8 +64,10 @@ public class Main
             switch(UserInput)
             {
                 case "1":
+                newFurnitureView.CreateFurnitureMenu(logger);
                 break;
                 case "2":
+                newFurnitureView.DisplayFurnitureReport();
                 break;
                 case "3":
                 break;
