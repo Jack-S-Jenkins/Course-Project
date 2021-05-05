@@ -23,18 +23,38 @@ public class FurnitureView {
         System.out.println("\nThird, what is the Type of Furniture");
         newfurniture.set_type(reader.readLine());
 
-        System.out.println("\nFourth, what is the Color");
-        newfurniture.set_color(reader.readLine());
-
         System.out.println("\nPrice, how much does it cost");
-        newfurniture.set_price(reader.read());
+
+        try
+        {
+            newfurniture.set_price(Double.parseDouble(reader.readLine()));
+        } catch (Exception ex)
+        {
+            logger.severe("User did not Input a Correct quanitity" + ex);
+            System.out.println("You did not enter the correct quanitity, please try again" + ex);
+        }
+
 
         System.out.println("\nQuantity, how many of these did we receive");
-        newfurniture.set_quantity(reader.read());
+        
+        try{
+            newfurniture.set_quantity(Integer.parseInt(reader.readLine()));
+        } catch (Exception ex)
+        {
+            logger.severe("User did not Input a Correct quanitity" + ex);
+            System.out.println("You did not enter the correct quanitity, please try again" + ex);
+        }
+        
+
+        System.out.println("\nLastly, what is the Color");
+        newfurniture.set_color(reader.readLine());
+
 
         FurnitureController newfurniturecontroller = new FurnitureController();
         
         newfurniturecontroller.Create(newfurniture);
+
+        logger.info("Created New Furniture Item" + newfurniture.get_sKU());
     }
 
     public void DisplayFurnitureReport()

@@ -38,7 +38,7 @@ public class FurnitureController {
                     "Type of Furniture: " + rs.getString("type") + "\n" +
                     "Color of Furniture: " + rs.getString("color") + "\n" +
                     "Price of Furniture: " + rs.getString("price") + "\n" +
-                    "How many do we Have?" + rs.getString("quantity") + "\n");
+                    "Quantity On Hand: " + rs.getString("quantity") + "\n");
             }
 
         } 
