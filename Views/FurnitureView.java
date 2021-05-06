@@ -66,4 +66,16 @@ public class FurnitureView {
         newfurniturecontroller.GetAllFurniture();
 
     }
+
+    public void SellFurnitureItem(Logger logger) throws IOException {
+        System.out.println("You have sold a piece of Furniture. Congratulations! Please write down the Id of the Furniture that you sold: \n");
+        
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        String id = reader.readLine();
+
+        FurnitureController newfurniturecontroller = new FurnitureController();
+        
+        newfurniturecontroller.RemoveQuanitityFromSKU(id);
+    }
 }

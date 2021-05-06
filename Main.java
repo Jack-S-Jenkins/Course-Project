@@ -56,7 +56,7 @@ public class Main
             System.out.println("What would you like to do? Enter the Number below:"
             + "\n1. Create new Furniture"
             + "\n2. View Furniture Report"
-            + "\n3. "
+            + "\n3. Sell Furniture Item"
             + "\n4. Exit\n");
 
             String UserInput = reader.readLine();
@@ -70,6 +70,7 @@ public class Main
                 newFurnitureView.DisplayFurnitureReport();
                 break;
                 case "3":
+                newFurnitureView.SellFurnitureItem(logger);
                 break;
                 case "4":
                 // Exit the Application
